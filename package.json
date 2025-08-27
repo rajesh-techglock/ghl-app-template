@@ -1,0 +1,39 @@
+{
+    "name": "@cbnsndwch/ghl-app",
+    "description": "A base template for full stack HighLevel Marketplace apps",
+    "version": "0.3.6",
+    "license": "MIT",
+    "private": true,
+    "repository": "https://github.com/cbnsndwch/ghl-app",
+    "author": {
+        "name": "Sergio Leon",
+        "url": "https://www.cbnsndwch.io"
+    },
+    "workspaces": {
+        "packages": [
+            "apps/*",
+            "libs/*"
+        ]
+    },
+    "scripts": {
+        "clean": "turbo run clean",
+        "build": "turbo run build",
+        "format": "turbo run format",
+        "lint": "turbo run lint",
+        "lint:fix": "turbo run lint:fix",
+        "test": "turbo run test",
+        "pub": "turbo run pub",
+        "vmajor": "yarn workspaces foreach -vA --topological-dev version major",
+        "vminor": "yarn workspaces foreach -vA --topological-dev version minor",
+        "vpatch": "yarn workspaces foreach -vA --topological-dev version patch",
+        "clog": "conventional-changelog -p angular -i CHANGELOG.md -o changelog-temp.md"
+    },
+    "devDependencies": {
+        "change-case": "^5.4.4",
+        "conventional-changelog-cli": "^4.1.0",
+        "http-server": "^14.1.1",
+        "npm-check-updates": "^16.14.20",
+        "turbo": "latest"
+    },
+    "packageManager": "yarn@4.1.1"
+}
